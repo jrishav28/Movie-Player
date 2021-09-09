@@ -10,9 +10,12 @@ function App() {
   const handleClick = async () => {
     const res = await sign_in();
     console.log(res);
+
     localStorage.setItem("user", JSON.stringify(res));
-    let { displayName } = res;
-    setUname(displayName);
+    if (localStorage.getItem("user")) {
+      let { displayName } = res;
+      setUname(displayName);
+    }
     userCheck();
   };
 
