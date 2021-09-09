@@ -13,8 +13,9 @@ function App() {
 
     localStorage.setItem("user", JSON.stringify(res));
     if (localStorage.getItem("user")) {
-      let { displayName } = res;
-      setUname(displayName);
+      // if(res?.displayName)
+      // let displayName = res?.displayName;
+      // setUname(displayName);
     }
     userCheck();
   };
