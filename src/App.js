@@ -6,7 +6,7 @@ import sign_in from "./config/auth";
 import Home from "./Home";
 function App() {
   let [user, setUser] = useState(false);
-  let [uname, setUname] = useState("");
+  // let [uname, setUname] = useState("");
   const handleClick = async () => {
     const res = await sign_in();
     console.log(res);

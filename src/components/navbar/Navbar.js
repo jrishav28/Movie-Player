@@ -4,7 +4,8 @@ import { sign_out } from "../../config/auth";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBellFill } from "react-icons/bs";
-const Navbar = ({ userCheck }) => {
+
+const Navbar = ({ userCheck, search, setSearch }) => {
   const [show, handleShow] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   useEffect(() => {
@@ -68,11 +69,14 @@ const Navbar = ({ userCheck }) => {
         </ul>
       </nav>
 
-      {/* 🔍search 🔔 🎁avatar🔻 */}
-
-      <div className="nav-right">
+      <nav className="nav-right">
         <div className="item search">
-          <input type="text" placeholder="search" style={{ width: "120px" }} />
+          <input
+            type="text"
+            value={search}
+            placeholder="search..."
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <div className="item search-icon">
           <BiSearch></BiSearch>
@@ -80,7 +84,7 @@ const Navbar = ({ userCheck }) => {
         <div className="item bell">
           <BsFillBellFill />
         </div>
-        <div className="item uname">
+        <div className="item uname" onClick={() => setDropdown((p) => !p)}>
           <p>{username()}</p>
         </div>
 
@@ -101,7 +105,7 @@ const Navbar = ({ userCheck }) => {
             </div>
           )}
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

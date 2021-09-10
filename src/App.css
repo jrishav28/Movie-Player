@@ -1,6 +1,6 @@
-/* * {
-  background-color: rgb(225, 245, 245);
-} */
+.App {
+  background-color: black;
+}
 .login-page {
   background-image: url(https://wallpaperaccess.com/full/3658607.jpg);
   height: 100vh;
